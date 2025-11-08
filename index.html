@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ريفو - مطعم راقي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Revo</div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="#home" class="nav-link">الرئيسية</a>
+                    <a href="#menu" class="nav-link">المنيو</a>
+                    <a href="#about" class="nav-link">من نحن</a>
+                    <a href="#reservations" class="nav-link">الحجوزات</a>
+                    <a href="#contact" class="nav-link">تواصل معنا</a>
+                    <a href="cooker.html" class="nav-link">الطباخ</a>
+                    <a href="manger.html" class="nav-link">المدير</a>
+                </nav>
+
+                <button class="btn-primary desktop-only" onclick="scrollToSection('reservations')">
+                    احجز طاولة
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span class="menu-icon">☰</span>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" id="mobileNav">
+                <a href="#home" class="nav-link" onclick="closeMobileMenu()">الرئيسية</a>
+                <a href="#menu" class="nav-link" onclick="closeMobileMenu()">المنيو</a>
+                <a href="#about" class="nav-link" onclick="closeMobileMenu()">من نحن</a>
+                <a href="#reservations" class="nav-link" onclick="closeMobileMenu()">الحجوزات</a>
+                <a href="#contact" class="nav-link" onclick="closeMobileMenu()">تواصل معنا</a>
+                <a href="cook.html" class="nav-link" onclick="closeMobileMenu()">الطباخ</a>
+                <a href="manager.html" class="nav-link" onclick="closeMobileMenu()">المدير</a>
+                <button class="btn-primary" onclick="scrollToSection('reservations'); closeMobileMenu();">
+                    احجز طاولة
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Revo </h1>
+            <p class="hero-text">
+                تجربة طهي متميزة في أجواء من الأناقة الراقية.
+                حيث يلتقي التقليد مع الابتكار.
+            </p>
+            <div class="hero-buttons">
+                 <button class="btn-secondary" onclick="scrollToSection('reservations')">
+                    احجز طاولة
+                </button>
+                <button class="btn-primary" onclick="scrollToSection('menu')">
+                    شاهد المنيو
+                </button>
+               
+                 <button class="btn-secondary" onclick="scrollToSection('reservations')">
+                     اطلب دليفرى
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>المنيو</h2>
+                <p>أطباق مختارة بعناية معدة بأجود المكونات واهتمام استثنائي بالتفاصيل.</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" onclick="showTab('appetizers')">المقبلات</button>
+                    <button class="tab-btn" onclick="showTab('mains')">الأطباق الرئيسية</button>
+                    <button class="tab-btn" onclick="showTab('desserts')">الحلويات</button>
+                </div>
+
+                <!-- Appetizers Tab -->
+                <div id="appetizers" class="tab-content active">
+                    <div class="menu-grid">
+                        <div class="menu-card menu-card-image">
+                            <img src="./OIP (1).webp" alt="Chocolate">
+                           
+                        <div class="menu-card">
+                            <div class="menu-card-header">
+                                <h3>بوراتا بالكمأة</h3>
+                                <span class="price">$18</span>
+                            </div>
+                            <p>بوراتا طازجة، كمأة سوداء، طماطم موروثة، زيت الريحان</p>
+                            <br>
+                              <button style="text-align: center;    margin-right: 55px;
+" class="btn-primary desktop-only" onclick="handleOrder('بوراتا بالكمأة', '$18')">
+                    اطلبه الان
+                </button>
+                        </div>
+                        
+                        </div>
+                        <div class="menu-card menu-card-image">
+                            <img src="./OIP (2).webp" alt="Chocolate">
+                           
+                        <div class="menu-card">
+                            <div class="menu-card-header">
+                                <h3>إسكالوب محمر</h3>
+                                <span class="price">$22</span>
+                            </div>
+                            <p>إسكالوب محمر في المقلاة، بيوريه قرنبيط، بانسيتا مقرمشة</p>
+                             <br>
+                              <button style="text-align: center;    margin-right: 55px;
+" class="btn-primary desktop-only" onclick="handleOrder('إسكالوب محمر', '$22')">
+                    اطلبه الان
+                </button>
+                        </div>
+                        </div>
+                        <div class="menu-card menu-card-image">
+                            <img src="./OIP (3).webp" alt="Chocolate">
+                           
+                        <div class="menu-card">
+                            <div class="menu-card-header">
+                                <h3>تيرين فوا جرا</h3>
+                                <span class="price">$24</span>
+                            </div>
+                            <p>فوا جرا البط، مربى التين، بريوش محمص مع اضافات من السلطات </p>
+                             <br>
+                              <<button style="text-align: center;    margin-right: 55px;
+" class="btn-primary desktop-only" onclick="handleOrder('تورين فورا جرا', '$24')">
+                    اطلبه الان
+                </button>
+                        </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Main Courses Tab -->
+                <div id="mains" class="tab-content">
+                    <div class="menu-grid menu-grid-large">
+                        <div class="menu-card menu-card-image">
+                            <img src="https://images.unsplash.com/photo-1628497622763-36456bb4d56b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb3VybWV0JTIwc3RlYWslMjBkaXNofGVufDF8fHx8MTc2MTU5MjM1Nnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Wagyu Beef">
+                            <div class="menu-card-body">
+                                <div class="menu-card-header">
+                                    <h3>لحم واغيو تندرلوين</h3>
+                                    <span class="price">$58</span>
+                                </div>
+                                <p>8 أونصة تندرلوين، جراتان بطاطس بالكمأة، خضروات موسمية</p>
+                                 <br>
+                              <button style="text-align: center;    margin-right: 55px;
+" class="btn-primary desktop-only" onclick="handleOrder('لحم واغيرا تندرلوين ', '$58')">
+                    اطلبه الان
+                </button>
+                            </div>
+                        </div>
+                        <div class="menu-card menu-card-image">
+                            <img src="https://images.unsplash.com/photo-1749169337822-d875fd6f4c9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXN0YSUyMGl0YWxpYW4lMjBmb29kfGVufDF8fHx8MTc2MTU3MzQ1Mnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Pasta">
+                            <div class="menu-card-body">
+                                <div class="menu-card-header">
+                                    <h3>تاليياتيلي بالكركند</h3>
+                                    <span class="price">$48</span>
+                                </div>
+                                <p>معكرونة طازجة، كركند مين، صوص كريمة بالنبيذ الأبيض، طماطم كرزية</p>
+                                 <br>
+                             <button style="text-align: center;    margin-right: 55px;
+" class="btn-primary desktop-only" onclick="handleOrder('تاليياتيلى بالكركند ', '$48')">
+                    اطلبه الان
+                </button>
+                            </div>
+                        </div>
+                        <div class="menu-card menu-card-image">
+                            <img src="https://images.unsplash.com/photo-1519351635902-7c60d09cb2ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZWFmb29kJTIwcGxhdHRlcnxlbnwxfHx8fDE3NjE2NTcyNzB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Sea Bass">
+                            <div class="menu-card-body">
+                                <div class="menu-card-header">
+                                    <h3>سمك القاروص المتوسطي</h3>
+                                    <span class="price">$44</span>
+                                </div>
+                                <p>قاروص كامل مشوي، زبدة الليمون والأعشاب، خضروات مشوية</p>
+                                 <br>
+                              <button style="text-align: center;    margin-right: 55px;
+" class="btn-primary desktop-only" onclick="handleOrder('سمك القارص المتوسطى ', '$44')">
+                    اطلبه الان
+                </button>
+                            </div>
+                        </div>
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desserts Tab -->
+                <div id="desserts" class="tab-content">
+                    <div class="menu-grid">
+                        <div class="menu-card menu-card-image">
+                            <img src="https://images.unsplash.com/photo-1644158776192-2d24ce35da1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNzZXJ0JTIwY2hvY29sYXRlJTIwY2FrZXxlbnwxfHx8fDE3NjE2NDg3MzV8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Chocolate">
+                            <div class="menu-card-body">
+                                <div class="menu-card-header">
+                                    <h3>سوفليه الشوكولاتة</h3>
+                                    <span class="price">$14</span>
+                                </div>
+                                <p>سوفليه شوكولاتة داكنة، آيس كريم الفانيليا</p>
+                                 <br>
+                              <button style="text-align: center;    margin-right: 55px;
+" class="btn-primary desktop-only" onclick="handleOrder('سوفليه الشوكلاته ', '$14')">
+                    اطلبه الان
+                </button>
+                            </div>
+                        </div>
+                         <div class="menu-card menu-card-image">
+                            <img src="./OIP.webp" alt="Chocolate">
+                           
+                            <div class="menu-card-body">
+                                <div class="menu-card-header">
+                                    <h3>كريم بروليه</h3>
+                                    <span class="price">$12</span>
+                                </div>
+                                <p>كاسترد فانيليا كلاسيكي، سكر كراميل</p>
+                                 <br>
+                              <button style="text-align: center;    margin-right: 55px;
+" class="btn-primary desktop-only" onclick="handleOrder(' كريم بروليه ', '$12')">
+                    اطلبه الان
+                </button>
+                            </div>
+                            
+                       
+                            
+                        </div>
+                        <div class="menu-card menu-card-image">
+                            <img src="./download.webp" alt="Chocolate">
+                            <div class="menu-card-body">
+                                <div class="menu-card-header">
+                                    <h3>تيراميسو</h3>
+                                    <span class="price">$13</span>
+                                </div>
+                                <p>حلوى إيطالية تقليدية، إسبريسو، ماسكاربوني</p>
+                                     <br>
+                             <button style="text-align: center;    margin-right: 55px;
+" class="btn-primary desktop-only" onclick="handleOrder('تيراميسو ', '$13')">
+                    اطلبه الان
+                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>قصتنا</h2>
+                    <p>
+                        يقدم ريفو مأكولات  مصريه فرنسية استثنائية منذ عام 2010. شغفنا بالتميز الطهوي
+                        وتفانينا في استخدام أجود المكونات الموسمية جعلنا وجهة محبوبة لعشاق الطعام.
+                    </p>
+                    <p>
+                        تحت إشراف طاهينا الحائز على جوائز، جان بيير لوران، نبتكر أطباقاً تحتفي
+                        بالتقاليد والابتكار معاً، لتقديم تجربة طعام لا تُنسى.
+                    </p>
+
+                    <div class="features-grid">
+                        <div class="feature-box">
+                            <div class="feature-icon">⭐</div>
+                            <p>نجمة ميشلان</p>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-icon">✨</div>
+                            <p>تقييم 5 نجوم</p>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-icon">❤️</div>
+                            <p>المفضل لدى الضيوف</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1698653223689-24b0bfd5150b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwY2hlZiUyMGNvb2tpbmd8ZW58MXx8fHwxNzYxNjUzMTg3fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Chef">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Section -->
+    <section id="reservations" class="reservations-section">
+        <div class="container">
+
+            <div class="section-header">
+                <h2>احجز طاولتك</h2>
+                <p>احجز طاولتك لتجربة طعام لا تُنسى. نتطلع لاستقبالك.</p>
+            </div>
+        
+            <div class="reservation-form-container">
+                <h3>إجراء حجز</h3>
+                <form id="reservationForm" class="reservation-form" onsubmit="handleReservation(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل</label>
+                            <input type="text" id="name" required placeholder="محمد أحمد">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" required placeholder="mohamed@example.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" required placeholder="0123456789">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">📅 التاريخ</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">🕐 الوقت</label>
+                            <select id="time" required>
+                                <option value="">اختر الوقت</option>
+                                <option value="17:00">5:00 مساءً</option>
+                                <option value="17:30">5:30 مساءً</option>
+                                <option value="18:00">6:00 مساءً</option>
+                                <option value="18:30">6:30 مساءً</option>
+                                <option value="19:00">7:00 مساءً</option>
+                                <option value="19:30">7:30 مساءً</option>
+                                <option value="20:00">8:00 مساءً</option>
+                                <option value="20:30">8:30 مساءً</option>
+                                <option value="21:00">9:00 مساءً</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">👥 عدد الأشخاص</label>
+                            <select id="guests" required>
+                                <option value="">العدد</option>
+                                <option value="1">شخص واحد</option>
+                                <option value="2">شخصان</option>
+                                <option value="3">3 أشخاص</option>
+                                <option value="4">4 أشخاص</option>
+                                <option value="5">5 أشخاص</option>
+                                <option value="6">6 أشخاص</option>
+                                <option value="7">7+ أشخاص</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-full">طلب حجز</button>
+                </form>
+            </div>
+        </div>
+        <div class="container" id="delivery">
+
+        <div class="section-header">
+                <h2>اطلب دليفرى</h2>
+                <p>اسرع خدمة توصيل </p>
+            </div>
+         <div class="reservation-form-container1">
+
+                <h3>طلب دليفرى</h3>
+                <form id="reservationForm1" class="reservation-form" onsubmit="handleDelivery(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل</label>
+                            <input type="text" id="name" required placeholder="محمد أحمد">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" required placeholder="mohamed@example.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" required placeholder="0123456789">
+                    </div>
+
+                    <div class="form-group">
+                        <label for=""> العنوان</label>
+                        <input type="text" id="name2">
+                        </div>
+                                            <button type="submit" class="btn-primary btn-full">طلب حجز</button>
+
+
+                    
+                    </div>
+                    </div>
+                    </div>
+     </div>               
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>تواصل معنا</h2>
+                <p>نحن في قلب المدينة. تعال لزيارتنا للحصول على تجربة طعام استثنائية.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>العنوان</h3>
+                    <p>
+                        كورنيش بنى سويف<br>
+                        البوابه الرئيسية<br>
+                        بنى سويف ، مصر
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>الهاتف</h3>
+                    <p>
+                        <a href="tel:+201143117291">+20 1143117291</a>
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>البريد الإلكتروني</h3>
+                    <p>
+                        <a href=">mohamed1tarek12@icloud.com">mohamed1tarek12@icloud.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">🕐</div>
+                    <h3>مواعيد العمل</h3>
+                    <p>
+                        الثلاثاء-الخميس: 5م - 10م<br>
+                        الجمعة-السبت: 5م - 11م<br>
+                        الأحد-الإثنين: مغلق
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>© 2025 ريفو . جميع الحقوق محفوظة.  </p>
+        </footer>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
